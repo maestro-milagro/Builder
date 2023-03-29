@@ -17,11 +17,13 @@ public class Person {
         this.surname = surname;
         this.age = age;
     }
+
     public Person(String name, String surname, String address) {
         this.name = name;
         this.surname = surname;
         this.address = address;
     }
+
     public Person(String name, String surname, String address, int age) {
         this.name = name;
         this.surname = surname;
@@ -30,13 +32,14 @@ public class Person {
     }
 
     public boolean hasAge() {
-        if (age==0){
+        if (age == 0) {
             return false;
         }
         return true;
     }
+
     public boolean hasAddress() {
-        if (address!=null){
+        if (address != null) {
             return true;
         }
         return false;
@@ -46,12 +49,15 @@ public class Person {
     public String getName() {
         return name;
     }
+
     public String getSurname() {
         return surname;
     }
+
     public OptionalInt getAge() {
         return OptionalInt.of(age);
     }
+
     public String getAddress() {
         return address;
     }
@@ -59,13 +65,14 @@ public class Person {
     public void setAddress(String address) {
         this.address = address;
     }
+
     public void happyBirthday() {
-        if(hasAge()){
+        if (hasAge()) {
             age++;
         }
     }
 
-    public PersonBuilder newChildBuilder(){
+    public PersonBuilder newChildBuilder() {
         PersonBuilder personBuilder = new PersonBuilder()
                 .setSurname(this.surname)
                 .setAge(1)
@@ -75,15 +82,15 @@ public class Person {
 
     @Override
     public String toString() {
-        return "name - "+ name+
-                " surname - "+surname+
-                " age - "+age+
-                " address - "+address;
+        return "name - " + name +
+                " surname - " + surname +
+                " age - " + age +
+                " address - " + address;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name,surname,address,age);
+        return Objects.hash(name, surname, address, age);
     }
 
 
